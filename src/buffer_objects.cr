@@ -19,6 +19,10 @@ module GL
     LibGL.draw_elements(mode, count, type, Pointer(Void).new(indices))
   end
 
+  def self.draw_elements_instanced(mode : Primitive, count : Int, type : Type, indices : Int, instancecount : Int)
+    LibGL.draw_elements_instanced(mode, count, type, Pointer(Void).new(indices), instancecount)
+  end
+
   def self.enable_vertex_attrib_array(index : Int)
     LibGL.enable_vertex_attrib_array(index)
   end
@@ -38,6 +42,10 @@ module GL
       LibGL.gen_buffers(n, buff)
       n
     end.map { |id| Buffer.new(id) }
+  end
+
+  def self.vertex_attrib_divisor(index : Int, divisor : Int)
+    LibGL.vertex_attrib_divisor(index, divisor)
   end
 
   def self.vertex_attrib_pointer(index : Int, size : Int, type : Type, normalized : Bool, stride : Int, offset : Int)

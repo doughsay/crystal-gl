@@ -9,13 +9,16 @@ lib LibGL
   TRUE = 1
   TRIANGLES = 0x0004_u32
   DEPTH_BUFFER_BIT = 0x0100_u32
+  CULL_FACE = 0x0B44_u32
   DEPTH_TEST = 0x0B71_u32
   UNSIGNED_INT = 0x1405_u32
   FLOAT = 0x1406_u32
   COLOR_BUFFER_BIT = 0x4000_u32
   ARRAY_BUFFER = 0x8892_u32
   ELEMENT_ARRAY_BUFFER = 0x8893_u32
+  STREAM_DRAW = 0x88E0_u32
   STATIC_DRAW = 0x88E4_u32
+  DYNAMIC_DRAW = 0x88E8_u32
   FRAGMENT_SHADER = 0x8B30_u32
   VERTEX_SHADER = 0x8B31_u32
   COMPILE_STATUS = 0x8B81_u32
@@ -35,6 +38,7 @@ lib LibGL
   fun delete_vertex_arrays = glDeleteVertexArrays(n : Int32, arrays : UInt32*)
   fun draw_arrays = glDrawArrays(mode : UInt32, first : Int32, count : Int32)
   fun draw_elements = glDrawElements(mode : UInt32, count : Int32, type : UInt32, indices : Void*)
+  fun draw_elements_instanced = glDrawElementsInstanced(mode : UInt32, count : Int32, type : UInt32, indices : Void*, instancecount : Int32)
   fun enable = glEnable(cap : UInt32)
   fun enable_vertex_attrib_array = glEnableVertexAttribArray(index : UInt32)
   fun gen_buffers = glGenBuffers(n : Int32, buffers : UInt32*)
@@ -48,5 +52,6 @@ lib LibGL
   fun shader_source = glShaderSource(shader : UInt32, count : Int32, string : UInt8**, length : Int32*)
   fun uniform_matrix4fv = glUniformMatrix4fv(location : Int32, count : Int32, transpose : UInt8, value : Float32*)
   fun use_program = glUseProgram(program : UInt32)
+  fun vertex_attrib_divisor = glVertexAttribDivisor(index : UInt32, divisor : UInt32)
   fun vertex_attrib_pointer = glVertexAttribPointer(index : UInt32, size : Int32, type : UInt32, normalized : UInt8, stride : Int32, pointer : Void*)
 end

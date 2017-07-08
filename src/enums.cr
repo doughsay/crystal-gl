@@ -16,11 +16,14 @@ module GL
   end
 
   enum BufferUsage : UInt32
+    StreamDraw = LibGL::STREAM_DRAW
     StaticDraw = LibGL::STATIC_DRAW
+    DynamicDraw = LibGL::DYNAMIC_DRAW
   end
 
   enum Capability : UInt32
     DepthTest = LibGL::DEPTH_TEST
+    CullFace = LibGL::CULL_FACE
   end
 
   enum Primitive : UInt32
