@@ -7,6 +7,10 @@ module GL
     LibGL.buffer_data(target, size, data, usage)
   end
 
+  def self.buffer_sub_data(target : BufferBindingTarget, offset : Int, size : Int, data : Array(Number))
+    LibGL.buffer_sub_data(target, offset, size, data)
+  end
+
   def self.delete_buffer(buffer : Buffer)
     delete_buffers([buffer])
   end

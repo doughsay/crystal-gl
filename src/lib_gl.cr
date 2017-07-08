@@ -28,6 +28,7 @@ lib LibGL
   fun bind_buffer = glBindBuffer(target : UInt32, buffer : UInt32)
   fun bind_vertex_array = glBindVertexArray(array : UInt32)
   fun buffer_data = glBufferData(target : UInt32, size : Int32, data : Void*, usage : UInt32)
+  fun buffer_sub_data = glBufferSubData(target : UInt32, offset : Int32, size : Int32, data : Void*)
   fun clear = glClear(mask : UInt32)
   fun clear_color = glClearColor(red : Float32, green : Float32, blue : Float32, alpha : Float32)
   fun compile_shader = glCompileShader(shader : UInt32)
