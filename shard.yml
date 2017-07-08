@@ -1,0 +1,13 @@
+name: gl
+version: 0.0.1
+
+authors:
+  - Chris Dosé <chris.dose@gmail.com>
+
+description: |
+  Idiomatic Crystal OpenGL bindings
+
+libraries:
+  GL: "*"
+
+license: MIT

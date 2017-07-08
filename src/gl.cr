@@ -1,0 +1,10 @@
+require "./lib_gl"
+
+require "./buffer_objects"
+require "./color"
+require "./enums"
+require "./rendering"
+require "./shaders"
+require "./state"
+require "./vertex_array_objects"
+require "./wrappers"
