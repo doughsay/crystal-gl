@@ -19,6 +19,14 @@ module GL
     LibGL.delete_buffers(buffers.size, buffers.map(&.value))
   end
 
+  def self.draw_arrays(mode : Primitive, first : Int, count : Int)
+    LibGL.draw_arrays(mode, first, count)
+  end
+
+  def self.draw_arrays_instanced(mode : Primitive, first : Int, count : Int, instancecount : Int)
+    LibGL.draw_arrays_instanced(mode, first, count, instancecount)
+  end
+
   def self.draw_elements(mode : Primitive, count : Int, type : Type, indices : Int)
     LibGL.draw_elements(mode, count, type, Pointer(Void).new(indices))
   end

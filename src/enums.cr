@@ -24,6 +24,17 @@ module GL
   enum Capability : UInt32
     DepthTest = LibGL::DEPTH_TEST
     CullFace = LibGL::CULL_FACE
+    LineSmooth = LibGL::LINE_SMOOTH
+  end
+
+  enum PolygonFace : UInt32
+    FrontAndBack = LibGL::FRONT_AND_BACK
+  end
+
+  enum PolygonMode : UInt32
+    Point = LibGL::POINT
+    Line = LibGL::LINE
+    Fill = LibGL::FILL
   end
 
   enum Primitive : UInt32

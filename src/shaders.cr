@@ -41,6 +41,10 @@ module GL
     LibGL.shader_source(shader, 1, [source.to_unsafe], nil)
   end
 
+  def self.uniform3fv(uniform : Uniform, count : Int, value : Pointer(Float32)) # TODO: fix value type
+    LibGL.uniform3fv(uniform, count, value)
+  end
+
   def self.uniform_matrix4fv(uniform : Uniform, count : Int, transpose : Bool, value : Pointer(Float32)) # TODO: fix value type
     LibGL.uniform_matrix4fv(uniform, count, transpose ? Boolean::True : Boolean::False, value)
   end
