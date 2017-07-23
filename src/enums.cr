@@ -25,6 +25,7 @@ module GL
     DepthTest = LibGL::DEPTH_TEST
     CullFace = LibGL::CULL_FACE
     LineSmooth = LibGL::LINE_SMOOTH
+    Multisample = LibGL::MULTISAMPLE
   end
 
   enum PolygonFace : UInt32

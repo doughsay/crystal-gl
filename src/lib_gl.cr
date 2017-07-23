@@ -19,6 +19,7 @@ lib LibGL
   LINE = 0x1B01_u32
   FILL = 0x1B02_u32
   COLOR_BUFFER_BIT = 0x4000_u32
+  MULTISAMPLE = 0x809D_u32
   ARRAY_BUFFER = 0x8892_u32
   ELEMENT_ARRAY_BUFFER = 0x8893_u32
   STREAM_DRAW = 0x88E0_u32
@@ -37,7 +38,7 @@ lib LibGL
   fun clear = glClear(mask : UInt32)
   fun clear_color = glClearColor(red : Float32, green : Float32, blue : Float32, alpha : Float32)
   fun compile_shader = glCompileShader(shader : UInt32)
-  fun create_program = glCreateProgram : UInt32
+  fun create_program = glCreateProgram() : UInt32
   fun create_shader = glCreateShader(type : UInt32) : UInt32
   fun delete_buffers = glDeleteBuffers(n : Int32, buffers : UInt32*)
   fun delete_shader = glDeleteShader(shader : UInt32)
